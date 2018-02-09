@@ -21,6 +21,9 @@ description:         Please see the README on Github at <https://github.com/marl
 
 dependencies:
 - base >= 4.7 && < 5
+- array
+- text
+- bytestring
 
 library:
   source-dirs: src
