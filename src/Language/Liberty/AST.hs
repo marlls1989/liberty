@@ -17,7 +17,7 @@ data Liberty = Group  String [AttrVal] [Liberty]
              deriving (Eq, Ord, Generic)
 
 indent :: String -> String
-indent a = intercalate "\n\t" ("" : lines a) ++ "\n"
+indent = unlines . map ('\t':) . lines
 
 scapeString :: String -> String
 scapeString = concatMap scapeChar where
@@ -29,7 +29,7 @@ scapeString = concatMap scapeChar where
 
 instance Show AttrVal where
   show (NumVal a) = show a
-  show (StrVal a) = "\"" ++ scapeString a ++ "\""
+  show (StrVal a) = a
 
 instance Show Liberty where
   show (Group kind attrs children) = kind ++ " (" ++ intercalate ", " (map show attrs) ++ ") {\n" ++
