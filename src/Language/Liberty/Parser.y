@@ -38,7 +38,7 @@ ElementL : ElementL Element { $2 : $1 }
 
 Element :: { Liberty }
 Element : id "(" ArgL ")" "{" ElementL "}" { Group $1 $3 $ reverse $6 }
-	| id "(" ArgL ")" ";"              { EAtrib $1 $3 }
+        | id "(" ArgL ")" ";"              { EAtrib $1 $3 }
         | id ":" Val ";"                   { Atrib $1 $3 }
 
 ArgL :: { [AttrVal] }
