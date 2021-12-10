@@ -1,0 +1,59 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           liberty
+version:        0.1.0.0
+synopsis:       Synopsis Liberty file format Parser, AST and generator
+description:    Please see the README on Github at <https://github.com/marlls1989/liberty#readme>
+category:       Language, Hardware, Embedded
+homepage:       https://github.com/marlls1989/liberty#readme
+bug-reports:    https://github.com/marlls1989/liberty/issues
+author:         Marcos Luiggi Lemos Sartori
+maintainer:     marcos.sartori@acad.pucrs.br
+copyright:      Copyright (c) 2018, Marcos Luiggi Lemos Sartori
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/marlls1989/liberty
+
+library
+  exposed-modules:
+      Language.Liberty
+      Language.Liberty.AST
+      Language.Liberty.Lex
+      Language.Liberty.Parser
+  other-modules:
+      Paths_liberty
+  hs-source-dirs:
+      src
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , bytestring
+    , text
+  default-language: Haskell2010
+
+test-suite liberty-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_liberty
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , bytestring
+    , liberty
+    , text
+  default-language: Haskell2010
