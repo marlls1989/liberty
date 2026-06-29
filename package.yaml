@@ -19,6 +19,9 @@ category:            Language, Hardware, Embedded
 # common to point users to the README.md file.
 description:         Please see the README on Github at <https://github.com/marlls1989/liberty#readme>
 
+# NOTE: the alex/happy build tools are not declared here (no `build-tools:`
+# stanza); Stack auto-detects them. `array` is only needed transitively by the
+# tables in Happy's generated parser. `text` is declared but currently unused.
 dependencies:
 - base >= 4.7 && < 5
 - array
